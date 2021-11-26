@@ -1,0 +1,11 @@
+<?php
+   if(isset($_POST['logout'])){
+       unset($_POST['logout']);
+       unset($_SESSION['uid']);
+       session_destroy($_SESSION['uid']);
+       session_abort();
+       session_destroy();
+       header("location:index.php");
+       exit();
+   }
+?>
